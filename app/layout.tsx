@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     ...(SOCIAL.x ? { site: SOCIAL.x, creator: "@lawcopilot" } : {}),
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: "W3bd2hzOvfX3suaUmAb3v5bXZczkIRRDhrDO9L2kf8A",
+  },
 };
 
 function JsonLdSchema() {
@@ -104,7 +107,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${nohemi.variable}`}>
+    <html lang="en" className={`${inter.variable} ${nohemi.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased">
         <JsonLdSchema />
         <ThemeProvider attribute="class"
